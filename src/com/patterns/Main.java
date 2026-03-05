@@ -66,18 +66,38 @@ public class Main {
 
         // ===== 6. PROTOTYPE =====
         System.out.println("\n========== 6. PROTOTYPE ==========");
-        Circle c1 = new Circle("Червоний", 10, 20, 5.0);
-        Circle c2 = (Circle) c1.clone();
 
+        Circle c1 = new Circle("Червоний", 10, 20, 5.0);
+        Circle c2 = (Circle) c1.clone();  // точна копія
+
+        System.out.println("--- Порівняння одразу після клонування ---");
+        System.out.println("c1: " + c1);
+        System.out.println("c2: " + c2);
+        System.out.println("c1 == c2        : " + (c1 == c2));           // false — різні обʼєкти в памʼяті
+        System.out.println("c1.equals(c2)   : " + c1.equals(c2));        // true  — однакові поля
+        System.out.println("hashCode c1     : " + c1.hashCode());
+        System.out.println("hashCode c2     : " + c2.hashCode());        // однакові hashCode
+
+        System.out.println("\n--- Змінюємо клон ---");
         c2.setColor("Синій");
         c2.setRadius(8.0);
-        System.out.println("Оригінал: " + c1);
-        System.out.println("Клон:     " + c2);
+        System.out.println("c1: " + c1);
+        System.out.println("c2: " + c2);
+        System.out.println("c1 == c2        : " + (c1 == c2));           // false
+        System.out.println("c1.equals(c2)   : " + c1.equals(c2));        // false — поля різні
+        System.out.println("hashCode c1     : " + c1.hashCode());
+        System.out.println("hashCode c2     : " + c2.hashCode());        // різні hashCode
 
+        System.out.println("\n--- Rectangle ---");
         Rectangle r1 = new Rectangle("Зелений", 0, 0, 10, 5);
         Rectangle r2 = (Rectangle) r1.clone();
+        System.out.println("r1.equals(r2)   : " + r1.equals(r2));        // true
+        System.out.println("hashCode r1     : " + r1.hashCode());
+        System.out.println("hashCode r2     : " + r2.hashCode());        // однакові
         r2.setColor("Жовтий");
-        System.out.println("Оригінал: " + r1);
-        System.out.println("Клон:     " + r2);
+        System.out.println("Після зміни кольору:");
+        System.out.println("r1.equals(r2)   : " + r1.equals(r2));        // false
+        System.out.println("hashCode r1     : " + r1.hashCode());
+        System.out.println("hashCode r2     : " + r2.hashCode());
     }
 }
