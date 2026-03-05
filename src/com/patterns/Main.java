@@ -39,16 +39,30 @@ public class Main {
         // ===== 4. ABSTRACT FACTORY =====
         System.out.println("\n========== 4. ABSTRACT FACTORY ==========");
         System.out.println("-- Windows --");
-        UIFactory win = new WindowsFactory();
-        win.createButton().render();
-        win.createTextField().onInput("Привіт");
-        win.createCheckbox().onToggle();
+        UIFactory winFactory = UserInterface.FactoryMaker.makeFactory(OSType.WINDOWS);
 
-        System.out.println("-- Mac --");
-        UIFactory mac = new MacFactory();
-        mac.createButton().render();
-        mac.createTextField().onInput("Привіт");
-        mac.createCheckbox().onToggle();
+        UserInterface winUI = new UserInterface(
+                winFactory.createButton(),
+                winFactory.createTextField(),
+                winFactory.createCheckbox()
+        );
+
+        winUI.button().render();
+        winUI.textField().onInput("Привіт");
+        winUI.checkbox().onToggle();
+
+        System.out.println("\n-- Mac --");
+        UIFactory macFactory = UserInterface.FactoryMaker.makeFactory(OSType.MAC);
+
+        UserInterface macUI = new UserInterface(
+                macFactory.createButton(),
+                macFactory.createTextField(),
+                macFactory.createCheckbox()
+        );
+
+        macUI.button().render();
+        macUI.textField().onInput("Привіт");
+        macUI.checkbox().onToggle();
 
         // ===== 5. BUILDER =====
         System.out.println("\n========== 5. BUILDER ==========");
