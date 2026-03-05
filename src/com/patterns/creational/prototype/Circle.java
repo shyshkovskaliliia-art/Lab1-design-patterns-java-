@@ -1,5 +1,7 @@
 package com.patterns.creational.prototype;
 
+import java.util.Objects;
+
 public class Circle extends Shape {
     private double radius;
 
@@ -12,6 +14,18 @@ public class Circle extends Shape {
     public double area() { return Math.PI * radius * radius; }
 
     public void setRadius(double r) { this.radius = r; }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Circle circle = (Circle) o;
+        return Double.compare(radius, circle.radius) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(radius);
+    }
 
     @Override
     public String toString() {

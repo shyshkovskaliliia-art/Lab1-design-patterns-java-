@@ -11,7 +11,6 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        // ===== 1. SINGLETON =====
         System.out.println("========== 1. SINGLETON ==========");
         Singleton db1 = Singleton.getInstance();
         Singleton db2 = Singleton.getInstance();
@@ -20,7 +19,6 @@ public class Main {
         db1.setDatabaseUrl("jdbc:postgresql://localhost/newdb");
         System.out.println("db2 бачить зміну: " + db2.getDatabaseUrl());
 
-        // ===== 2. FACTORY =====
         System.out.println("\n========== 2. FACTORY ==========");
         Transport truck = TransportFactory.create("truck");
         Transport ship  = TransportFactory.create("ship");
@@ -70,6 +68,7 @@ public class Main {
         System.out.println("\n========== 6. PROTOTYPE ==========");
         Circle c1 = new Circle("Червоний", 10, 20, 5.0);
         Circle c2 = (Circle) c1.clone();
+
         c2.setColor("Синій");
         c2.setRadius(8.0);
         System.out.println("Оригінал: " + c1);
