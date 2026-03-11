@@ -1,0 +1,25 @@
+package com.patterns.structural.decorator;
+
+public class SlackDecorator extends BaseDecorator {
+    public SlackDecorator(Notifier notifier) {
+        super(notifier);
+    }
+
+    @Override
+    public void send(String message) {
+        super.send(message); // Спочатку виконуємо попередні дії
+        System.out.println("Sending Slack message: " + message);
+    }
+}
+
+public class FacebookDecorator extends BaseDecorator {
+    public FacebookDecorator(Notifier notifier) {
+        super(notifier);
+    }
+
+    @Override
+    public void send(String message) {
+        super.send(message);
+        System.out.println("Posting on Facebook: " + message);
+    }
+}
