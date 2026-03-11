@@ -9,6 +9,9 @@ public class Character {
         this.archetype = archetype;
     }
 
+    public Character() {
+    }
+
     public void introduce() {
         System.out.printf("  %-18s | Архетип: %-12s | %s%n",
                 heroName, archetype.getName(), archetype.getStats());
