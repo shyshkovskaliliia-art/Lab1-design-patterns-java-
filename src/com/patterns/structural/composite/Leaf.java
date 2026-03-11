@@ -1,8 +1,8 @@
 package com.patterns.structural.composite;
 
 public class Leaf extends TreeComponent {
-    private double area;      // площа фотосинтезу, см²
-    private double weight;    // маса, г
+    private final double area;      // площа фотосинтезу, см²
+    private final double weight;    // маса, г
     private String color;
     private boolean alive;
 

@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Trunk extends TreeComponent{
-    private String  species;
-    private int     ageYears;
-    private double  heightM;
-    private double  ownWeight;
-    private List<TreeComponent> mainBranches = new ArrayList<>();
+    private final String  species;
+    private final int     ageYears;
+    private final double  heightM;
+    private final double  ownWeight;
+    private final List<TreeComponent> mainBranches = new ArrayList<>();
 
     public Trunk(String species, int ageYears, double heightM, double ownWeightKg) {
         super(species);
