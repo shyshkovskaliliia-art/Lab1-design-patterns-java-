@@ -7,7 +7,6 @@ public class RateLimitProxy implements WeatherApi {
     private int  requestCount = 0;
     private long windowStart  = System.currentTimeMillis();
 
-    // Лічильники для статистики
     private int totalAllowed  = 0;
     private int totalBlocked  = 0;
 
