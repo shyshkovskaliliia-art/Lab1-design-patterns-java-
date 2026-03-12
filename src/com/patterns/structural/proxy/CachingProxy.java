@@ -3,7 +3,7 @@ package com.patterns.structural.proxy;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CachingProxy implements WeatherApi{
+public class CachingProxy extends WeatherApi {
     private final WeatherApi            target;
     private final Map<String, CacheEntry> cache = new HashMap<>();
 
@@ -11,7 +11,6 @@ public class CachingProxy implements WeatherApi{
     private static final long FORECAST_TTL = 600_000L;
     private static final long AIR_TTL      = 120_000L;
 
-    // Статистика
     private int hits   = 0;
     private int misses = 0;
 

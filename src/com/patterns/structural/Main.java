@@ -9,7 +9,7 @@ import com.patterns.structural.flyweight.*;
 import com.patterns.structural.proxy.*;
 
 public class Main {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
 
         // --- 1. ADAPTER ---
         System.out.println("=== 1. ADAPTER ===");
@@ -18,9 +18,14 @@ public class Main {
 
         // --- 2. BRIDGE ---
         System.out.println("=== 2. BRIDGE ===");
-        GroupLeader boss = new GroupLeader("Gandalf", new Mage());
-        boss.orderGroupAttack();
-        System.out.println();
+        Shape redCircle = new Circle(new RedColor());
+        Shape blueSquare = new Square(new BlueColor());
+
+        redCircle.draw();
+        blueSquare.draw();
+
+        Shape blueCircle = new Circle(new BlueColor());
+        blueCircle.draw();
 
         // --- 3. COMPOSITE ---
         System.out.println("=== 3. COMPOSITE ===");
@@ -49,7 +54,6 @@ public class Main {
         // --- 7. PROXY ---
         System.out.println("=== 7. PROXY (Weather Service) ===");
 
-        // Створюємо ланцюжок: Real API -> Cache -> Auth -> Rate Limit
         WeatherApi realService = new RealWeatherApi();
         WeatherApi cached = new CachingProxy(realService);
         WeatherApi authenticated = new AuthProxy(cached, "PREM-GOLD");
@@ -67,10 +71,6 @@ public class Main {
         System.out.println("\n--- Спроба доступу без преміум-ключа до прогнозу ---");
         WeatherApi freeApi = new AuthProxy(cached, "FREE-001");
         System.out.println(freeApi.getForecast("Львів", 3));
-
-        System.out.println("\n" + "=".repeat(50));
-        System.out.println(" ЛАБОРАТОРНА РОБОТА ЗАВЕРШЕНА УСПІШНО ");
-        System.out.println("=".repeat(50));
     }
 
 }

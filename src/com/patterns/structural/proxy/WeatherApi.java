@@ -1,7 +1,13 @@
 package com.patterns.structural.proxy;
 
-public class WeatherApi {
-    ApiResponse getCurrentWeather(String city);
-    ApiResponse getForecast(String city, int days);
-    ApiResponse getAirQuality(String city);
+public abstract class WeatherApi {
+    public ApiResponse getCurrentWeather(String city) {
+        return null;
+    }
+
+    public abstract ApiResponse getForecast(String city, int days);
+
+    ApiResponse getAirQuality(String city) {
+        return null;
+    }
 }

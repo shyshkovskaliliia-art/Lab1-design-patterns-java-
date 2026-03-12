@@ -2,7 +2,7 @@ package com.patterns.structural.proxy;
 
 import java.util.Set;
 
-public class AuthProxy implements WeatherApi{
+public class AuthProxy extends WeatherApi {
     private final WeatherApi target;
     private final String     apiKey;
 

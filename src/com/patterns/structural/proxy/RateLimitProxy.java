@@ -1,6 +1,6 @@
 package com.patterns.structural.proxy;
 
-public class RateLimitProxy implements WeatherApi {
+public class RateLimitProxy extends WeatherApi {
     private final WeatherApi target;
     private final int        maxRequestsPerMinute;
 

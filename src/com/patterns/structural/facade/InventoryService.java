@@ -1,7 +1,10 @@
 package com.patterns.structural.facade;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class InventoryService {
-    private Map<String, Integer> stock = new HashMap<>();
+    private final Map<String, Integer> stock = new HashMap<>();
 
     public InventoryService() {
         stock.put("Ноутбук Dell XPS 15",   5);

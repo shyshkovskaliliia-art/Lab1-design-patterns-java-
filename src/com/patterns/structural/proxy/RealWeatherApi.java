@@ -3,7 +3,7 @@ package com.patterns.structural.proxy;
 import java.util.Map;
 import java.util.Random;
 
-public class RealWeatherApi implements WeatherApi {
+public class RealWeatherApi extends WeatherApi {
     private static final Random rng = new Random(42);
 
     private static final Map<String, String> WEATHER_DATA = Map.of(
