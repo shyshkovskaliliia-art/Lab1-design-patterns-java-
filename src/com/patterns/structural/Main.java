@@ -10,7 +10,6 @@ import com.patterns.structural.proxy.*;
 
 public class Main {
     public static void main(String[] args) {
-
         // --- 1. ADAPTER ---
         System.out.println("=== 1. ADAPTER ===");
         new Laptop("Asus ZenBook").connect(new UsbAToUsbCAdapter(new UsbADevice("Printer")));
