@@ -1,8 +1,8 @@
 package com.patterns.behavioral.Iterator;
 
 public class Song {
-    private String title;
-    private String artist;
+    private final String title;
+    private final String artist;
 
     public Song(String title, String artist) {
         this.title = title;
