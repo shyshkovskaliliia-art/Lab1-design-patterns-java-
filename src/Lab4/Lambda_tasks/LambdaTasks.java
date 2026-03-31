@@ -62,6 +62,13 @@ public class LambdaTasks {
                 .collect(Collectors.toList());
     }
 
+    //task 8
+    public static List<String> task8(List<String> strings) {
+        return strings.stream()
+                .sorted((s1, s2) -> Integer.compare(s1.length(), s2.length()))
+                .collect(Collectors.toList());
+    }
+
 
 
 }
