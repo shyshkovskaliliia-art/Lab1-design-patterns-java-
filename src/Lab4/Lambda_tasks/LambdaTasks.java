@@ -85,6 +85,17 @@ public class LambdaTasks {
                 .filter(s -> s != null && !s.trim().isEmpty())
                 .findFirst()
                 .orElse("No non-empty lines");
+    }
+
     //task11
+    public static boolean task11(List<String> strings) {
+        if (strings.isEmpty()) return true;
+        return strings.stream()
+                .allMatch(s -> s != null && !s.isEmpty() &&
+                        Character.isUpperCase(s.charAt(0)));
+    }
+
+    //task12
+
 
 }
