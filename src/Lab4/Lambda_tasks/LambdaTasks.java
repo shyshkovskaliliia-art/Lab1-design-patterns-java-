@@ -96,6 +96,14 @@ public class LambdaTasks {
     }
 
     //task12
+    public static Optional<Integer> task12(List<Integer> numbers){
+        return numbers.stream()
+                .filter (n-> n%2 ==0)
+                .max((a,b)-> Integer.compare(a,b));
+    }
+
+    //task13
+
 
 
 }
