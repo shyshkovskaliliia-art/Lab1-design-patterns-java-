@@ -56,5 +56,12 @@ public class LambdaTasks {
     }
 
     //task7
+    public static List<Integer> task7 (List<Integer> numbers){
+        return numbers.stream()
+                .map(n-> n*n)
+                .collect(Collectors.toList());
+    }
+
+
 
 }
