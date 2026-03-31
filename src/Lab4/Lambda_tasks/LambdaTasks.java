@@ -44,4 +44,11 @@ public class LambdaTasks {
         return IntStream.rangeClosed(1,n)
                 .reduce(1,(a,b)-> a*b);
     }
+
+    //task6
+    public static String task6(List<Integer> numbers){
+        long sum = numbers.stream()
+                .mapToLong(n-> n)
+                .sum();
+    }
 }
