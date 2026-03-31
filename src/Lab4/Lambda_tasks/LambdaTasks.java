@@ -69,6 +69,14 @@ public class LambdaTasks {
                 .collect(Collectors.toList());
     }
 
-
+    //task 9
+    public static long task9(String sentence) {
+        if (sentence == null || sentence.trim().isEmpty()) {
+            return 0;
+        }
+        return Arrays.stream(sentence.split("\\s+"))
+                .filter(word -> !word.isEmpty())
+                .count();
+    }
 
 }
