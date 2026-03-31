@@ -78,5 +78,11 @@ public class LambdaTasks {
                 .filter(word -> !word.isEmpty())
                 .count();
     }
-
+    //task 10
+    public static String task10(List<String> strings) {
+        return strings.stream()
+                .filter(s -> s != null && !s.trim().isEmpty())
+                .findFirst()
+                .orElse("No non-empty lines");
+    }
 }
