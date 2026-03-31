@@ -30,4 +30,11 @@ public class LambdaTasks {
 
     }
 
+    //task4
+    public static int task4(List<Integer> numbers){
+        return numbers.stream()
+                .filter(n-> n%2 == 0)
+                .mapToInt(n->n)
+                .sum()
+    }
 }
