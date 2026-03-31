@@ -37,4 +37,11 @@ public class LambdaTasks {
                 .mapToInt(n->n)
                 .sum()
     }
+
+    //task5
+    public static long task5(int n){
+        if (n<0) return 0;
+        return IntStream.rangeClosed(1,n)
+                .reduce(1,(a,b)-> a*b);
+    }
 }
