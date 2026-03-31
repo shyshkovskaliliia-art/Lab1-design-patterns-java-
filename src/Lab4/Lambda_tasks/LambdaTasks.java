@@ -50,5 +50,11 @@ public class LambdaTasks {
         long sum = numbers.stream()
                 .mapToLong(n-> n)
                 .sum();
+        long product = numbers.stream()
+                .reduce(1L,(a,b)-> a*b);
+        return "Sum:" + sum +",Product: " + product;
     }
+
+    //task7
+
 }
