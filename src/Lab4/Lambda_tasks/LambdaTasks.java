@@ -22,5 +22,12 @@ public class LambdaTasks {
 
     }
 
+    // task 3
+    public static List<String> task3 (List<String> strings){
+        return strings.stream()
+                .sorted((s1, s2) -> s1.compareTo(s2))
+                .collect(Collectors.toList());
+
+    }
 
 }
