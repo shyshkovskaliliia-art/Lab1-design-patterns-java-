@@ -1,22 +1,23 @@
 package Lab5.design_patterns_revisited.revisited.decorator;
-package com.patterns.structural.decorator;
 
 public class Main {
     public static void main(String[] args) {
         String message = "Hello, World!";
 
-        System.out.println("=== Classic Decorator ===");
-        Notifier classic = new BasicNotifier();
-        classic = new FacebookDecorator(classic);
-        classic = new SlackDecorator(classic);
+        System.out.println("=== Classic Decorator (старий підхід) ===");
+        com.patterns.structural.decorator.Notifier classic =
+                new com.patterns.structural.decorator.BasicNotifier();
+        classic = new com.patterns.structural.decorator.FacebookDecorator(classic);
         classic.send(message);
 
-        System.out.println("\n=== Functional Decorator ===");
-        Notifier functional = NotifierDecorator.decorate(
-                NotifierDecorator.BASIC,
+        System.out.println("\n=== Functional Decorator (новий підхід) ===");
+        Notifier baseNotifier = new BasicNotifier();
+
+        Notifier functionalNotifier = NotifierDecorator.decorate(
+                baseNotifier,
                 NotifierDecorator.withFacebook,
                 NotifierDecorator.withSlack
         );
-        functional.send(message);
+        functionalNotifier.send(message);
     }
 }

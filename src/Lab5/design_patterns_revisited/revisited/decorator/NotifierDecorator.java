@@ -4,9 +4,6 @@ import java.util.function.Function;
 import java.util.stream.Stream;
 
 public class NotifierDecorator {
-    public static final Notifier BASIC = message ->
-            System.out.println("Sending SMS: " + message);
-
     public static final Function<Notifier, Notifier> withFacebook = notifier ->
             message -> {
                 notifier.send(message);
