@@ -3,7 +3,7 @@ package Lab5.design_patterns_revisited.revisited.execute_around;
 import java.util.function.Consumer;
 
 public class Resource {
-    rivate boolean open = false;
+    private boolean open = false;
     private Resource() {}
 
     private void open() {
