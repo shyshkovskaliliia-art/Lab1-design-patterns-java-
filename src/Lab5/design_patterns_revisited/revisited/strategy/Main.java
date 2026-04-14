@@ -6,27 +6,15 @@ public class Main {
         cart.addProductPrice(100);
         cart.addProductPrice(250);
 
-        PaymentStrategy creditCard = () -> {
-            System.out.println("Перевірка даних картки: **** **** **** 1234");
-            System.out.println("Оплачено " + 350 + " грн за допомогою Credit Card.");
-        };
-        cart.checkout(creditCard);
+        cart.checkout(amount ->
+                System.out.println("Оплачено " + amount + " грн через Credit Card."));
 
-        String email = "user@example.com";
-        PaymentStrategy payPal = () -> {
-            System.out.println("Авторизація в системі PayPal для: " + email);
-            System.out.println("Оплачено " + 350 + " грн через PayPal.");
-        };
-        cart.checkout(payPal);
+        cart.checkout(amount -> {
+            System.out.println("Авторизація в PayPal...");
+            System.out.println("Оплачено " + amount + " грн через PayPal.");
+        });
 
-        PaymentStrategy crypto = createCryptoPayment("1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa");
-        cart.checkout(crypto);
-    }
-
-    private static PaymentStrategy createCryptoPayment(String wallet) {
-        return () -> {
-            System.out.println("Перевірка адреси гаманця: " + wallet);
-            System.out.println("Оплачено за допомогою Bitcoin.");
-        };
+        cart.checkout(amount ->
+                System.out.println("Оплачено " + amount + " грн через Bitcoin."));
     }
 }

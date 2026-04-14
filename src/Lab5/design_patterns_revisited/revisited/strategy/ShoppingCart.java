@@ -8,7 +8,7 @@ public class ShoppingCart {
     }
 
     public void checkout(PaymentStrategy paymentMethod) {
-        paymentMethod.collectPaymentDetails();
+        System.out.println("Початок транзакції...");
         paymentMethod.pay(totalAmount);
     }
 }
