@@ -5,7 +5,7 @@ public class Main {
         NotificationService email = new EmailService();
         email.notifyUser("Hello via Email");
 
-        NotificationService push = () -> new PushNotification();
+        NotificationService push = PushNotification::new;
         push.notifyUser("Hello via Push");
     }
 }
